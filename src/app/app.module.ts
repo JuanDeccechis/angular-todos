@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { ToDoItemComponent } from './to-do-item/to-do-item.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component'
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import { FormsModule } from '@angular/forms'
     AppComponent,
     ToDoItemComponent,
     ToDoListComponent,
+    AboutComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
