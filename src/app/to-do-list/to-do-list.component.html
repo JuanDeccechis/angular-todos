@@ -1,0 +1,39 @@
+<p>to-do-list works!</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Estado
+            </th>
+            <th>
+                Tiempo total
+            </th>
+            <th>
+                Tiempo realizado
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= 'let item of toDos'>
+            <td>
+                {{item.nombre}}
+            </td>
+            <td *ngIf='item.total === item.realizado' class="success"> FINALIZADO
+            </td>
+            <td *ngIf='item.total > item.realizado' [ngClass]= '{"error": item.realizado === 0}'> {{item.estado}}
+                </td>
+            <td>
+                {{item.total}}
+            </td>
+            <td>
+                <button class="btn btn-primary btn-sm" (click)="downTime(item)">-</button>
+                <input class="input-small" type="number" [(ngModel)]="item.realizado"/>
+                <button class="btn btn-primary btn-sm" (click)="upTime(item)">+</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
