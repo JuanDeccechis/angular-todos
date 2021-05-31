@@ -8,7 +8,9 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
 
 import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
+import { CartComponent } from './cart/cart.component'
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { HomeComponent } from './home/home.component'
     ToDoListComponent,
     AboutComponent,
     HomeComponent,
+    InputIntegerComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

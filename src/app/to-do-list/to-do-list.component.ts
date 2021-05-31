@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from './Item';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-to-do-list',
@@ -30,20 +31,17 @@ export class ToDoListComponent implements OnInit {
 
   ] 
 
-  constructor() { }
+  constructor(private cart: CartService) {
+   }
 
   ngOnInit(): void {
   }
 
-  downTime(item: Item): void{
-    if (item.realizado > 0){
-      item.realizado--;
-    }
+  limitar(tope: number): void {
+    alert("se alcanzó el tope de: " + tope);
   }
 
-  upTime(item: Item): void{
-    if (item.total > item.realizado) {
-      item.realizado++;
-    }
+  addToCart(item: Item): void{
+    this.cart.addToCart(item);
   }
 }

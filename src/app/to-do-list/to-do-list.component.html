@@ -28,9 +28,8 @@
                 {{item.total}}
             </td>
             <td>
-                <button class="btn btn-primary btn-sm" (click)="downTime(item)">-</button>
-                <input class="input-small" type="number" [(ngModel)]="item.realizado"/>
-                <button class="btn btn-primary btn-sm" (click)="upTime(item)">+</button>
+                <app-input-integer [(value)]="item.realizado" [total]="item.total" (tope)="limitar($event)"></app-input-integer>
+                <button class="btn" (click)="addToCart(item)">Comprar</button>
             </td>
         </tr>
     </tbody>
