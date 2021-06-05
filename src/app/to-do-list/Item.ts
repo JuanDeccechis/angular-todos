@@ -3,4 +3,5 @@ export interface Item {
     estado: string;
     total: number;
     realizado: number;
+    actual: number;
   }

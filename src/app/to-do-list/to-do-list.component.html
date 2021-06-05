@@ -13,6 +13,9 @@
             <th>
                 Tiempo realizado
             </th>
+            <th>
+                Cargar tarea
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -28,8 +31,11 @@
                 {{item.total}}
             </td>
             <td>
-                <app-input-integer [(value)]="item.realizado" [total]="item.total" (tope)="limitar($event)"></app-input-integer>
-                <button class="btn" (click)="addToCart(item)">Comprar</button>
+                {{item.realizado}}
+            </td>
+            <td>
+                <app-input-integer [(value)]="item.actual" [total]="item.total-item.realizado" (tope)="limitar($event)"></app-input-integer>
+                <button class="btn" (click)="addToCart(item)">Cargar</button>
             </td>
         </tr>
     </tbody>

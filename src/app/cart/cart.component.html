@@ -1,1 +1,7 @@
-<p>cart works!</p>
+<h3>Carrito</h3>
+<ul>
+    <li *ngFor="let item of (cartList$ | async)">
+        {{item.nombre}}: {{item.actual}}
+        <button class="btn" (click)="removeToCart(item)">Remover</button>
+    </li>
+</ul>

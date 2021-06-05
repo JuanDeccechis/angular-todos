@@ -14,19 +14,22 @@ export class ToDoListComponent implements OnInit {
       nombre: 'Curso Angular',
       estado: 'In Progress',
       total: 8,
-      realizado: 8
+      realizado: 8,
+      actual: 0
     },
     {
       nombre: 'Practica Interfaces',
       estado: 'Waiting',
       total: 180,
-      realizado: 0
+      realizado: 0,
+      actual: 0
     },
     {
       nombre: 'Trabajo',
       estado: 'In Progress',
       total: 999,
-      realizado: 100
+      realizado: 100,
+      actual: 0
     },
 
   ] 
@@ -43,5 +46,7 @@ export class ToDoListComponent implements OnInit {
 
   addToCart(item: Item): void{
     this.cart.addToCart(item);
+    item.realizado += item.actual;
+    item.actual = 0;
   }
 }
