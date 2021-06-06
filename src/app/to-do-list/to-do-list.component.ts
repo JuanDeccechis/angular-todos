@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from './Item';
 import { CartService } from '../cart.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-to-do-list',
@@ -9,33 +10,11 @@ import { CartService } from '../cart.service';
 })
 export class ToDoListComponent implements OnInit {
 
-  toDos: Item[] = [
-    {
-      nombre: 'Curso Angular',
-      estado: 'In Progress',
-      total: 8,
-      realizado: 8,
-      actual: 0
-    },
-    {
-      nombre: 'Practica Interfaces',
-      estado: 'Waiting',
-      total: 180,
-      realizado: 0,
-      actual: 0
-    },
-    {
-      nombre: 'Trabajo',
-      estado: 'In Progress',
-      total: 999,
-      realizado: 100,
-      actual: 0
-    },
-
-  ] 
-
+  
+  toDoList$: Observable<Item[]>;
   constructor(private cart: CartService) {
-   }
+    this.toDoList$ = cart.toDoList.asObservable();
+  }
 
   ngOnInit(): void {
   }

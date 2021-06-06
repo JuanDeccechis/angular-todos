@@ -2,6 +2,6 @@
 <ul>
     <li *ngFor="let item of (cartList$ | async)">
         {{item.nombre}}: {{item.actual}}
-        <button class="btn" (click)="removeToCart(item)">Remover</button>
+        <button class="btn btn-primary" (click)="removeFromCart(item)">Remover</button>
     </li>
 </ul>

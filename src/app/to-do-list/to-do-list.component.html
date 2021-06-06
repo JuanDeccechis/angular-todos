@@ -19,7 +19,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor= 'let item of toDos'>
+        <tr *ngFor= "let item of (toDoList$ | async)">
             <td>
                 {{item.nombre}}
             </td>
@@ -35,7 +35,7 @@
             </td>
             <td>
                 <app-input-integer [(value)]="item.actual" [total]="item.total-item.realizado" (tope)="limitar($event)"></app-input-integer>
-                <button class="btn" (click)="addToCart(item)">Cargar</button>
+                <button *ngIf='item.actual > 0' class="btn btn-primary" (click)="addToCart(item)">Cargar</button>
             </td>
         </tr>
     </tbody>

@@ -18,7 +18,8 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  removeToCart(item: Item): void{
+  removeFromCart(item: Item): void{
+    this.cart.removeFromCart(item);
     item.actual = 0;
   }
 }
