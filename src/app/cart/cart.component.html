@@ -1,4 +1,5 @@
 <h3>Carrito</h3>
+<button class="btn btn-primary" *ngIf="(cartList$ | async)?.length" (click)="cleanCart()">Finalizar carga</button>
 <ul>
     <li *ngFor="let item of (cartList$ | async)">
         {{item.nombre}}: {{item.actual}}

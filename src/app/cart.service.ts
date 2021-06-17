@@ -56,7 +56,7 @@ export class CartService {
       if (elemCart){ 
         let index = this._cartList.indexOf(elemCart);
         this._cartList.splice(index, 1);
-        console.log("carga deshecha")
+        console.log("carga deshecha");
       }
     }
     else {
@@ -65,6 +65,12 @@ export class CartService {
     this.toDoList.next(this._toDoList);
     this.cartList.next(this._cartList);
   
+  }
+
+  cleanCart(){
+    this._cartList = [];
+    console.log("carga finalizada");
+    this.cartList.next(this._cartList);
   }
 
   constructor() { }

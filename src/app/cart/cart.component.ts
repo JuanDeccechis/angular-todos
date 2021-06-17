@@ -22,4 +22,8 @@ export class CartComponent implements OnInit {
     this.cart.removeFromCart(item);
     item.actual = 0;
   }
+
+  cleanCart(){
+    this.cart.cleanCart();
+  }
 }
